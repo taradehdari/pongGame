@@ -18,10 +18,10 @@ wn.tracer(0)
 paddle_a = turtle.Turtle()
 #speed of animation something need to do with turtle this sets to maximum speed
 paddle_a.speed(0)
-#shape
+
 paddle_a.shape("square")
-#color
 paddle_a.color("white")
+paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
 paddle_a.goto(-350,0)
 # paddle B
