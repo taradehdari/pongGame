@@ -52,12 +52,20 @@ def paddle_a_down():
     y = paddle_a.ycor()
     y -= 20
     paddle_a.sety(y)
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
 #keyboard binding
 wn.listen() # says listen to keyboard input
 wn.onkeypress(paddle_a_up, "w") # when user presses w call function paddle_a_up, paddle_a_up says go up 20 units and set to new location
 wn.onkeypress(paddle_a_down, "s")
-
-
+wn.onkeypress(paddle_b_up, "Up")
+wn.onkeypress(paddle_b_down, "Down")
 #main game loop
 while True:
     wn.update()
