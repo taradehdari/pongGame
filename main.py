@@ -42,6 +42,16 @@ ball.color("white")
 ball.penup()
 ball.goto(0,0)
 
+# Function
+# in this case we want to move paddles up and down
+def paddle_a_up():
+    y = paddle_a.ycor() #.ycor() is from turtle method and returns the y location
+    y += 20 #adds 20 to y (adds 20 pixels to y coordinate)
+    paddle_a.sety(y)
+#keyboard binding
+wn.listen() # says listen to keyboard input
+wn.onkeypress(paddle_a_up, "w") # when user presses w call function paddle_a_up, paddle_a_up says go up 20 units and set to new location
+
 
 #main game loop
 while True:
