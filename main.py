@@ -41,8 +41,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
-ball.dx = 0.15
-ball.dy = 0.15 # every time ball moves it moves by two pixels (up 2 (y) and right 2 (x))
+ball.dx = 0.1
+ball.dy = 0.1 # every time ball moves it moves by two pixels (up 2 (y) and right 2 (x))
 # Function
 # in this case we want to move paddles up and down
 def paddle_a_up():
@@ -97,6 +97,6 @@ while True:
         ball.setx(340)
         ball.dx *= -1
 
-    if (ball.xcor() < -340 and ball.xcor() < -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
