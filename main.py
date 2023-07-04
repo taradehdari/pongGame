@@ -2,6 +2,7 @@
 # turtle used for adding graphics and opening window can also use pygames but for simple games turtle is good to get started
 
 import turtle
+import winsound
 
 # create a window
 wn = turtle.Screen()
@@ -117,7 +118,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
+        winsound.PlaySound("bounce.mp3", winsound.SND_ASYNC) # the snd_async will play song in background so that the sound doesnt stop the game and plays while game goes on 
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound("bounce.mp3", winsound.SND_ASYNC)
