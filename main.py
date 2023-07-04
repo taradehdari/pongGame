@@ -63,20 +63,24 @@ pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "norm
 # in this case we want to move paddles up and down
 def paddle_a_up():
     y = paddle_a.ycor()  # .ycor() is from turtle method and returns the y location
-    y += 20  # adds 20 to y (adds 20 pixels to y coordinate)
-    paddle_a.sety(y)
+    if(y < 250): #so paddle doesnt go off screen
+        y += 20  # adds 20 to y (adds 20 pixels to y coordinate)
+        paddle_a.sety(y)
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20
-    paddle_a.sety(y)
+    if(y > -250):
+        y -= 20
+        paddle_a.sety(y)
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20
-    paddle_b.sety(y)
+    if(y < 250):
+        y += 20
+        paddle_b.sety(y)
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20
-    paddle_b.sety(y)
+    if(y > -250):
+        y -= 20
+        paddle_b.sety(y)
 # keyboard binding
 wn.listen() # says listen to keyboard input
 wn.onkeypress(paddle_a_up, "w")   # when user presses w call function paddle_a_up, paddle_a_up says go up 20 units and set to new location
