@@ -43,6 +43,17 @@ ball.penup()
 ball.goto(0,0)
 ball.dx = 0.1
 ball.dy = 0.1 # every time ball moves it moves by two pixels (up 2 (y) and right 2 (x))
+
+# Pen (just a turtle like the ball and paddle)
+pen = turtle.Turtle()
+pen.speed(0) #animation speed not movement speed
+pen.color("white")
+pen.penup() #so we dont have a line when pen moves
+pen.hideturtle() # because we do not wanna see it on screen just wanna see text it will write
+pen.goto(0, 260)
+pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
+
+
 # Function
 # in this case we want to move paddles up and down
 def paddle_a_up():
